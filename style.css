@@ -134,3 +134,42 @@ html, body {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
+
+#coloredImg {
+  width: 100vw;
+  height: 100vw;
+  object-fit: contain;
+  position: absolute; /* or relative, depending on layout */
+  display: block;
+  top: 43vw;
+  opacity: 0;
+}
+
+/*BUBBLES*/
+/* Container for bubbles */
+#bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* so it doesn’t block clicks */
+  overflow: hidden;
+  z-index: 1; /* behind captions/buttons */
+}
+
+/* Each bubble */
+.bubble {
+  position: absolute;
+  bottom: -50px; /* start below the screen */
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: rise 5s linear infinite;
+}
+
+@keyframes rise {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
